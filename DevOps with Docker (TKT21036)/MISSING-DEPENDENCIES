@@ -1,0 +1,5 @@
+command 1: docker run -it --name missingdep ubuntu sh -c 'while true; do echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website; done'
+command 2: docker exec -it missingdep bash
+command 3: apt-get update && apt-get install -y curl
+                            OR
+alt command 2-3: docker exec -it missingdep sh -c 'apt-get update && apt-get install -y curl'
